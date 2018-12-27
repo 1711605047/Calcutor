@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 et_input.setText(str + ((Button) v).getText());
                 break;
-          case R.id.bt_sub;
+          case R.id.bt_sub:
             case R.id.bt_add:
 
                 case R.id.bt_mul:
