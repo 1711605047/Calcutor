@@ -29,15 +29,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt_9 = (Button) findViewById(R.id.bt_9);
         bt_pt = (Button) findViewById(R.id.bt_pt);
         bt_add = (Button) findViewById(R.id.bt_add);
-        bt_sub = (Button) findViewById(R.id.bt_sub);
+        bt_sub = (Button) findViewById(R.id.bt_div);
         bt_mul = (Button) findViewById(R.id.bt_mul);
         bt_div = (Button) findViewById(R.id.bt_div);
         bt_clr = (Button) findViewById(R.id.bt_clr);
         bt_del = (Button) findViewById(R.id.bt_del);
         bt_eq = (Button) findViewById(R.id.bt_eq);
         et_input = (EditText) findViewById(R.id.et_input);
-
-
 
         bt_0.setOnClickListener(this);
         bt_1.setOnClickListener(this);
@@ -74,27 +72,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_8:
             case R.id.bt_9:
             case R.id.bt_pt:
-                if(clr_flag) {
+                if (clr_flag) {
+                    clr_flag = false;
                     str = "";
                     et_input.setText("");
 
                 }
                 et_input.setText(str + ((Button) v).getText());
                 break;
+          case R.id.bt_sub:
+            case R.id.bt_add:
 
-
-                  case R.id.bt_add:
-                  case R.id.bt_sub:
-                  case R.id.bt_mul:
-                  case R.id.bt_div:
-
-
+                case R.id.bt_mul:
+            case R.id.bt_div:
                 if(clr_flag){
                     clr_flag=false;
                     str="";
                     et_input.setText("");
                 }
-                if(str.contains("+")||str.contains("-")||str.contains("*")||str.contains("÷")) {
+                if(str.contains("+")||str.contains("-")||str.contains("×")||str.contains("÷")) {
                     str=str.substring(0,str.indexOf(" "));
                 }
                 et_input.setText(str+" "+((Button)v).getText()+" ");
@@ -120,17 +116,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
 
-
         }
     }
-
-
     private void getResult() {
         String exp = et_input.getText().toString();
-        if (exp == null || exp.equals(""))
-            return;
+        if (exp == null || exp.equals("")) return;
         //因为没有运算符所以不用运算
-        if (!exp.contains(" ")) {//如果不包含空格则返回
+        if (!exp.contains(" ")) {
             return;
 
         }
@@ -139,7 +131,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
             }
         clr_flag=true;
-
         String s1=exp.substring(0,exp.indexOf(" "));
         String op=exp.substring(exp.indexOf(" ")+1,exp.indexOf(" ")+2);
         String s2=exp.substring(exp.indexOf(" ")+3);
@@ -148,19 +139,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             double d1 = Double.parseDouble(s1);
             double d2 = Double.parseDouble(s2);
             if (op.equals("+")) {
-                cnt = d1+d2;
+                cnt = d1 + d2;
             }
-            else if (op.equals("-")) {
-                cnt = d1-d2;
+            if (op.equals("-")) {
+                cnt = d1 - d2;
             }
-            else if (op.equals("*")) {
-                cnt = d1*d2;
+            if (op.equals("×")) {
+                cnt = d1 * d2;
             }
-            else if (op.equals("÷")) {
-                if(d2==0) {
-                    cnt = 0;
-                }
-               else cnt = d1/d2;
+            if (op.equals("÷")) {
+                if (d2 == 0) cnt = 0;
+                else cnt = d1 / d2;
             }
             if(!s1.contains(".")&&!s2.contains(".")&&!op.equals("÷")) {
                 int res = (int) cnt;
@@ -176,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(op.equals("-")){
                 cnt=d1;
             }
-            if(op.equals("*")){
+            if(op.equals("×")){
                 cnt=0;
             }
             if(op.equals("÷")){
@@ -196,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(op.equals("-")){
                 cnt=0-d2;
             }
-            if(op.equals("*")){
+            if(op.equals("×")){
                 cnt=0;
             }
             if(op.equals("÷")){
