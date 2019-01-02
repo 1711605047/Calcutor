@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".MainActivity">
 
     <EditText
@@ -216,7 +217,7 @@
         android:id="@+id/bt_div"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        android:text="/"
+        android:text="÷"
         android:textSize="30sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/bt_pt"
         app:layout_constraintEnd_toEndOf="parent"
