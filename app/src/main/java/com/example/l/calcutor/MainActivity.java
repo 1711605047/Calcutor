@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button bt_0, bt_1, bt_2, bt_3, bt_4, bt_5, bt_6, bt_7, bt_8, bt_9, bt_pt;
-    Button bt_mul, bt_div, bt_add, bt_sub;
-    Button bt_clr, bt_del, bt_eq;
-    EditText et_input;
+    Button btn_main_0, btn_main_1, btn_main_2, btn_main_3, btn_main_4, btn_main_5, btn_main_6, btn_main_7, btn_main_8, btn_main_9, btn_main_pt;
+    Button btn_main_mul, btn_main_div, btn_main_add, btn_main_sub;
+    Button btn_main_clr, btn_main_del, btn_main_eq;
+    EditText edit_main_input;
     boolean clr_flag;
 
     @Override
@@ -17,101 +17,101 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bt_0 = (Button) findViewById(R.id.bt_0);
-        bt_1 = (Button) findViewById(R.id.bt_1);
-        bt_2 = (Button) findViewById(R.id.bt_2);
-        bt_3 = (Button) findViewById(R.id.bt_3);
-        bt_4 = (Button) findViewById(R.id.bt_4);
-        bt_5 = (Button) findViewById(R.id.bt_5);
-        bt_6 = (Button) findViewById(R.id.bt_6);
-        bt_7 = (Button) findViewById(R.id.bt_7);
-        bt_8 = (Button) findViewById(R.id.bt_8);
-        bt_9 = (Button) findViewById(R.id.bt_9);
-        bt_pt = (Button) findViewById(R.id.bt_pt);
-        bt_add = (Button) findViewById(R.id.bt_add);
-        bt_sub = (Button) findViewById(R.id.bt_sub);
-        bt_mul = (Button) findViewById(R.id.bt_mul);
-        bt_div = (Button) findViewById(R.id.bt_div);
-        bt_clr = (Button) findViewById(R.id.bt_clr);
-        bt_del = (Button) findViewById(R.id.bt_del);
-        bt_eq = (Button) findViewById(R.id.bt_eq);
-        et_input = (EditText) findViewById(R.id.et_input);
+        btn_main_0 = (Button) findViewById(R.id.btn_main_0);
+        btn_main_1 = (Button) findViewById(R.id.btn_main_1);
+        btn_main_2 = (Button) findViewById(R.id.btn_main_2);
+        btn_main_3 = (Button) findViewById(R.id.btn_main_3);
+        btn_main_4 = (Button) findViewById(R.id.btn_main_4);
+        btn_main_5 = (Button) findViewById(R.id.btn_main_5);
+        btn_main_6 = (Button) findViewById(R.id.btn_main_6);
+        btn_main_7 = (Button) findViewById(R.id.btn_main_7);
+        btn_main_8 = (Button) findViewById(R.id.btn_main_8);
+        btn_main_9 = (Button) findViewById(R.id.btn_main_9);
+        btn_main_pt = (Button) findViewById(R.id.btn_main_pt);
+        btn_main_add = (Button) findViewById(R.id.btn_main_add);
+        btn_main_sub = (Button) findViewById(R.id.btn_main_sub);
+        btn_main_mul = (Button) findViewById(R.id.btn_main_mul);
+        btn_main_div = (Button) findViewById(R.id.btn_main_div);
+        btn_main_clr = (Button) findViewById(R.id.btn_main_clr);
+        btn_main_del = (Button) findViewById(R.id.btn_main_del);
+        btn_main_eq = (Button) findViewById(R.id.btn_main_eq);
+        edit_main_input = (EditText) findViewById(R.id.edit_main_input);
 
-        bt_0.setOnClickListener(this);
-        bt_1.setOnClickListener(this);
-        bt_2.setOnClickListener(this);
-        bt_3.setOnClickListener(this);
-        bt_4.setOnClickListener(this);
-        bt_5.setOnClickListener(this);
-        bt_6.setOnClickListener(this);
-        bt_7.setOnClickListener(this);
-        bt_8.setOnClickListener(this);
-        bt_9.setOnClickListener(this);
-        bt_pt.setOnClickListener(this);
-        bt_add.setOnClickListener(this);
-        bt_sub.setOnClickListener(this);
-        bt_mul.setOnClickListener(this);
-        bt_div.setOnClickListener(this);
-        bt_clr.setOnClickListener(this);
-        bt_del.setOnClickListener(this);
-        bt_eq.setOnClickListener(this);
+        btn_main_0.setOnClickListener(this);
+        btn_main_1.setOnClickListener(this);
+        btn_main_2.setOnClickListener(this);
+        btn_main_3.setOnClickListener(this);
+        btn_main_4.setOnClickListener(this);
+        btn_main_5.setOnClickListener(this);
+        btn_main_6.setOnClickListener(this);
+        btn_main_7.setOnClickListener(this);
+        btn_main_8.setOnClickListener(this);
+        btn_main_9.setOnClickListener(this);
+        btn_main_pt.setOnClickListener(this);
+        btn_main_add.setOnClickListener(this);
+        btn_main_sub.setOnClickListener(this);
+        btn_main_mul.setOnClickListener(this);
+        btn_main_div.setOnClickListener(this);
+        btn_main_clr.setOnClickListener(this);
+        btn_main_del.setOnClickListener(this);
+        btn_main_eq.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        String str = et_input.getText().toString();
+        String str = edit_main_input.getText().toString();
         switch (v.getId()) {
-            case R.id.bt_0:
-            case R.id.bt_1:
-            case R.id.bt_2:
-            case R.id.bt_3:
-            case R.id.bt_4:
-            case R.id.bt_5:
-            case R.id.bt_6:
-            case R.id.bt_7:
-            case R.id.bt_8:
-            case R.id.bt_9:
-            case R.id.bt_pt:
+            case R.id.btn_main_0:
+            case R.id.btn_main_1:
+            case R.id.btn_main_2:
+            case R.id.btn_main_3:
+            case R.id.btn_main_4:
+            case R.id.btn_main_5:
+            case R.id.btn_main_6:
+            case R.id.btn_main_7:
+            case R.id.btn_main_8:
+            case R.id.btn_main_9:
+            case R.id.btn_main_pt:
                 if (clr_flag) {
                     clr_flag = false;
                     str = "";
-                    et_input.setText("");
+                    edit_main_input.setText("");
 
                 }
-                et_input.setText(str + ((Button) v).getText());
+                edit_main_input.setText(str + ((Button) v).getText());
                 break;
-          case R.id.bt_sub:
-            case R.id.bt_add:
+          case R.id.btn_main_sub:
+            case R.id.btn_main_add:
 
-                case R.id.bt_mul:
-            case R.id.bt_div:
+                case R.id.btn_main_mul:
+            case R.id.btn_main_div:
                 if(clr_flag){
                     clr_flag=false;
                     str="";
-                    et_input.setText("");
+                    edit_main_input.setText("");
                 }
                 if(str.contains("+")||str.contains("-")||str.contains("*")||str.contains("÷")) {
                     str=str.substring(0,str.indexOf(" "));
                 }
-                et_input.setText(str+" "+((Button)v).getText()+" ");
+                edit_main_input.setText(str+" "+((Button)v).getText()+" ");
                 break;
-            case R.id.bt_clr:
+            case R.id.btn_main_clr:
                 if(clr_flag)
                     clr_flag=false;
                 str="";
-                et_input.setText("");
+                edit_main_input.setText("");
                 break;
-            case R.id.bt_del: //判断是否为空，然后在进行删除
+            case R.id.btn_main_del: //判断是否为空，然后在进行删除
                 if(clr_flag){
                     clr_flag=false;
                     str="";
-                    et_input.setText("");
+                    edit_main_input.setText("");
                 }
                 else if(str!=null&&!str.equals("")){
-                    et_input.setText(str.substring(0,str.length()-1));
+                    edit_main_input.setText(str.substring(0,str.length()-1));
                 }
                 break;
-            case R.id.bt_eq:
+            case R.id.btn_main_eq:
                  getResult();
                 break;
 
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
     private void getResult() {
-        String exp = et_input.getText().toString();
+        String exp = edit_main_input.getText().toString();
         if (exp == null || exp.equals("")) return;
         //因为没有运算符所以不用运算
         if (!exp.contains(" ")) {
@@ -153,9 +153,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             if(!s1.contains(".")&&!s2.contains(".")&&!op.equals("÷")) {
                 int res = (int) cnt;
-                et_input.setText(res+"");
+                edit_main_input.setText(res+"");
             }else {
-                et_input.setText(cnt+"");}
+                edit_main_input.setText(cnt+"");}
         }
         else if(!s1.equals("")&&s2.equals("")){
             double d1=Double.parseDouble(s1);
@@ -173,9 +173,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             if(!s1.contains(".")) {
                 int res = (int) cnt;
-                et_input.setText(res+"");
+                edit_main_input.setText(res+"");
             }else {
-                et_input.setText(cnt+"");}
+                edit_main_input.setText(cnt+"");}
                 }
         else if(s1.equals("")&&!s2.equals("")){
             double d2=Double.parseDouble(s2);
@@ -193,12 +193,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             if(!s2.contains(".")) {
                 int res = (int) cnt;
-                et_input.setText(res+"");
+                edit_main_input.setText(res+"");
             }else {
-                et_input.setText(cnt+"");}
+                edit_main_input.setText(cnt+"");}
         }
         else {
-            et_input.setText("");
+            edit_main_input.setText("");
         }
 
         }
