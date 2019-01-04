@@ -9,8 +9,8 @@
 
     <EditText
         android:id="@+id/edit_main_input"
-        android:layout_width="0dp"
-        android:layout_height="283dp"
+        android:layout_width="410dp"
+        android:layout_height="184dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"

@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         btn_main_0 = (Button) findViewById(R.id.btn_main_0);
         btn_main_1 = (Button) findViewById(R.id.btn_main_1);
         btn_main_2 = (Button) findViewById(R.id.btn_main_2);
@@ -80,44 +79,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 edit_main_input.setText(str + ((Button) v).getText());
                 break;
-          case R.id.btn_main_sub:
+            case R.id.btn_main_sub:
             case R.id.btn_main_add:
 
-                case R.id.btn_main_mul:
+            case R.id.btn_main_mul:
             case R.id.btn_main_div:
-                if(clr_flag){
-                    clr_flag=false;
-                    str="";
+                if (clr_flag) {
+                    clr_flag = false;
+                    str = "";
                     edit_main_input.setText("");
                 }
-                if(str.contains("+")||str.contains("-")||str.contains("*")||str.contains("÷")) {
-                    str=str.substring(0,str.indexOf(" "));
+                if (str.contains("+") || str.contains("-") || str.contains("*") || str.contains("÷")) {
+                    str = str.substring(0, str.indexOf(" "));
                 }
-                edit_main_input.setText(str+" "+((Button)v).getText()+" ");
+                edit_main_input.setText(str + " " + ((Button) v).getText() + " ");
                 break;
             case R.id.btn_main_clr:
-                if(clr_flag)
-                    clr_flag=false;
-                str="";
+                if (clr_flag)
+                    clr_flag = false;
+                str = "";
                 edit_main_input.setText("");
                 break;
-            case R.id.btn_main_del: //判断是否为空，然后在进行删除
-                if(clr_flag){
-                    clr_flag=false;
-                    str="";
+            case R.id.btn_main_del:
+                if (clr_flag) {
+                    clr_flag = false;
+                    str = "";
                     edit_main_input.setText("");
-                }
-                else if(str!=null&&!str.equals("")){
-                    edit_main_input.setText(str.substring(0,str.length()-1));
+                } else if (str != null && !str.equals("")) {
+                    edit_main_input.setText(str.substring(0, str.length() - 1));
                 }
                 break;
             case R.id.btn_main_eq:
-                 getResult();
+                getResult();
                 break;
 
 
         }
     }
+
     private void getResult() {
         String exp = edit_main_input.getText().toString();
         if (exp == null || exp.equals("")) return;
@@ -126,16 +125,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
 
         }
-        if(clr_flag) {
+        if (clr_flag) {
             clr_flag = false;
             return;
-            }
-        clr_flag=true;
-        String s1=exp.substring(0,exp.indexOf(" "));
-        String op=exp.substring(exp.indexOf(" ")+1,exp.indexOf(" ")+2);
-        String s2=exp.substring(exp.indexOf(" ")+3);
-        double cnt=0;
-        if(!s1.equals("")&&!s2.equals("")) {
+        }
+        clr_flag = true;
+        String s1 = exp.substring(0, exp.indexOf(" "));
+        String op = exp.substring(exp.indexOf(" ") + 1, exp.indexOf(" ") + 2);
+        String s2 = exp.substring(exp.indexOf(" ") + 3);
+        double cnt = 0;
+        if (!s1.equals("") && !s2.equals("")) {
             double d1 = Double.parseDouble(s1);
             double d2 = Double.parseDouble(s2);
             if (op.equals("+")) {
@@ -151,57 +150,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (d2 == 0) cnt = 0;
                 else cnt = d1 / d2;
             }
-            if(!s1.contains(".")&&!s2.contains(".")&&!op.equals("÷")) {
+            if (!s1.contains(".") && !s2.contains(".") && !op.equals("÷")) {
                 int res = (int) cnt;
-                edit_main_input.setText(res+"");
-            }else {
-                edit_main_input.setText(cnt+"");}
-        }
-        else if(!s1.equals("")&&s2.equals("")){
-            double d1=Double.parseDouble(s1);
-            if(op.equals("+")){
-                cnt=d1;
+                edit_main_input.setText(res + "");
+            } else {
+                edit_main_input.setText(cnt + "");
             }
-            if(op.equals("-")){
-                cnt=d1;
+        } else if (!s1.equals("") && s2.equals("")) {
+            double d1 = Double.parseDouble(s1);
+            if (op.equals("+")) {
+                cnt = d1;
             }
-            if(op.equals("*")){
-                cnt=0;
+            if (op.equals("-")) {
+                cnt = d1;
             }
-            if(op.equals("÷")){
-                cnt=0;
+            if (op.equals("*")) {
+                cnt = 0;
             }
-            if(!s1.contains(".")) {
-                int res = (int) cnt;
-                edit_main_input.setText(res+"");
-            }else {
-                edit_main_input.setText(cnt+"");}
+            if (op.equals("÷")) {
+                cnt = 0;
+            } else if (s1.equals("") && !s2.equals("")) {
+                double d2 = Double.parseDouble(s2);
+                if (op.equals("+")) {
+                    cnt = d2;
                 }
-        else if(s1.equals("")&&!s2.equals("")){
-            double d2=Double.parseDouble(s2);
-            if(op.equals("+")){
-                cnt=d2;
+                if (op.equals("-")) {
+                    cnt = 0 - d2;
+                }
+                if (op.equals("*")) {
+                    cnt = 0;
+                }
+                if (op.equals("÷")) {
+                    cnt = 0;
+                }else {
+                    edit_main_input.setText(cnt + "");
+                }
+            } else {
+                edit_main_input.setText("");
             }
-            if(op.equals("-")){
-                cnt=0-d2;
-            }
-            if(op.equals("*")){
-                cnt=0;
-            }
-            if(op.equals("÷")){
-                cnt=0;
-            }
-            if(!s2.contains(".")) {
-                int res = (int) cnt;
-                edit_main_input.setText(res+"");
-            }else {
-                edit_main_input.setText(cnt+"");}
-        }
-        else {
-            edit_main_input.setText("");
-        }
 
         }
 
 
     }
+}
